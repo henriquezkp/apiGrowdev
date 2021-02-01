@@ -1,0 +1,72 @@
+body {
+    height: 100vh;
+    color: rgb(255, 255, 255);
+    background-color: rgb(101, 45, 255);
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+#divCadastro{
+    display: none;
+}
+
+#divLogin{
+    margin-top: 50px !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: block;
+    display: block;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 20px 70px rgb(143, 143, 143);
+}
+input, select{
+    margin-bottom: 15px;
+    box-shadow: 0 10px 70px rgba(255, 106, 6, 0.753);
+   
+
+}
+button{
+    margin-top: 15px;
+    background-color: rgba(255, 232, 181, 0.274) !important;
+    border-color: rgb(255, 191, 54) !important;
+}
+
+
+#divAplicacao{
+    display: none;
+    margin-top: 50px !important;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 228, 184, 0.555);
+    box-shadow: 0 15px 70px rgb(143, 143, 143);
+}
+#divLista{
+    padding-right: 30px;
+}
+
+
+
+#divLoading{
+    padding-top: 150px;
+    display: none;
+}
+.spinner-grow{
+    width: 3rem;
+    height: 3rem;
+}
+

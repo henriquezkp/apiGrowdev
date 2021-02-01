@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apiGrowdev</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+
+
+    <link rel="stylesheet" href="./style/style.css">
+
+</head>
+
+<body class="">
+
+    <div class="container">
+
+        <div id="divCadastro" class="justify-content">
+            <div class="py-5 text-center">
+
+                <h2>Faca seu cadastro</h2>
+                <p class="lead">Insira as informações nos campos abaixo</p>
+            </div>
+
+            <div class="">
+
+                <div class="col-md-12 col-lg-12 ">
+                    <h4 class="mb-3 text-center">Cadastro de Growdever</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+
+                            <div class="col-md-3 col-lg-3 "></div>
+                            <div class="col-sm-6">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Nome completo"
+                                    value="" required>
+                                <div class="invalid-feedback">
+                                    Informe um Nome.
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 "></div>
+
+                            <div class="col-md-3 col-lg-3 "></div>
+                            <div class="col-6">
+                                <label for="password" class="form-label">Senha</label>
+                                <div class="input-group">
+
+                                    <input type="password" class="form-control" id="inputPassword"
+                                        placeholder="Password" required>
+                                    <div class="invalid-feedback">
+                                        Informe uma senha.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 "></div>
+
+                            <div class="col-md-3 col-lg-3 "></div>
+                            <div class="col-4">
+                                <label for="userName" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="tagName">
+                                <div class="invalid-feedback">
+                                    Informe um nome de usuário.
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label for="country" class="form-label">Tipo de usuário</label>
+                                <select class="form-select" id="typeSelect" required>
+                                    <option value="">Escolha...</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Growdever">Growdever</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-lg-3 "></div>
+
+
+                        </div>
+
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 "></div>
+                            <button class="col-md-6 btn btn-primary btn-lg" type="button" id="btnCadastrar">Confirmar
+                                cadastro</button>
+                            <div class="col-md-3 col-lg-3 "></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="divLogin" class="justify-content">
+
+
+            <div class="row">
+                <div class="col-md-3 col-lg-3 "></div>
+                <div class="col-md-6 col-lg-6 ">
+                    <h4 class="mb-3 text-center">Realize seu login!</h4>
+                    <form>
+                        <div class="g-3 text-center">
+
+                            <div class="row col-md-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="emailLogin" placeholder="Email" value="">
+
+                            </div>
+
+                            <div class="row col-md-12">
+                                <label for="password" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="senhaLogin" placeholder="Password">
+
+                            </div>
+
+
+                            <button class="w-30 btn btn-primary btn-sm" type="button" id="btnLogin">Logar</button>
+
+
+                        </div>
+
+
+
+
+
+                        <hr class="my-4">
+
+                        <div class="col-12">
+                            <button class="w-30 btn btn-primary btn-sm" type="button" id="LoginCadastro">
+                                Não tem cadastro?
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-lg-3 "></div>
+            </div>
+        </div>
+
+        <div id="divAplicacao" class="justify-content">
+            <div class="row">
+                <div class="col-sm-2  ">
+                    <p>Lista de Growdevers</p>
+                    <p>Incluir Growdevers</p>
+                    <p>Sua conta</p>
+                </div>
+
+                <div class="col-sm-10 " >
+                    <h3>Lista de Growdevers</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">userName</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="divLista">
+                            <!--
+                            <tr>
+                                <th scope="row">userName</th>
+                                <td>Nome</td>
+                                <td>Email</td>
+                                <td>Tipo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">userName</th>
+                                <td>Nome</td>
+                                <td>Email</td>
+                                <td>Tipo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">userName</th>
+                                <td>Nome</td>
+                                <td>Email</td>
+                                <td>Tipo</td>
+                            </tr>
+                            -->
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <div id="divLoading" class="text-center ">
+
+            <div class="spinner-grow row" role="status">
+            </div>
+            <div>Loading...</div>
+
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2021 HenriqueZKP</p>
+
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>\
+    <script src="./bundle.js"></script>
+</body>
+
+</html>
