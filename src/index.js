@@ -33,12 +33,12 @@ class App {
             .then(r => {
 
                 const { success, token, uid } = r.data;
-                console.log(token);
-                this.token = token;
-                this.userId = uid;
+
 
                 if (success) {
-
+                    console.log(token);
+                    this.token = token;
+                    this.userId = uid;
                     this.aplicacao(this.token);
 
                 }

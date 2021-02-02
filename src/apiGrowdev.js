@@ -40,8 +40,7 @@ class apiGrowdev {
             baseURL: this.baseURL,
             headers: {
                 'Content-Type': 'application/json',
-                Accept: 'application/json',
-                Authorization: `Bearer ${token}`
+                Accept: 'application/json'
             },
         });
 
@@ -54,6 +53,7 @@ class apiGrowdev {
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
+                Authorization: `Bearer ${token}`
             },
         });
 
