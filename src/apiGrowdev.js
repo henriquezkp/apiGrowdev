@@ -47,7 +47,7 @@ class apiGrowdev {
         return api.post(url, dados);
     }
 
-    postAutenticado(url, dados) {
+    postAutenticado(url, dados, token) {
         const api = axios.create({
             baseURL: this.baseURL,
             headers: {
@@ -59,7 +59,37 @@ class apiGrowdev {
 
         return api.post(url, dados);
     }
+
+
+    deleteGrowdever(url, token) {
+        const api = axios.create({
+            baseURL: this.baseURL,
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                Authorization: `Bearer ${token}`
+            },
+        });
+
+        return api.delete(url);
+    }
+
+    editGrowdever(url, dados, token) {
+        const api = axios.create({
+            baseURL: this.baseURL,
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                Authorization: `Bearer ${token}`
+            },
+        });
+
+        return api.put(url, dados);
+    }
+
+
+
+
+    //end point
 }
-
-
 export default new apiGrowdev();

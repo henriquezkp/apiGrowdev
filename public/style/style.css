@@ -44,6 +44,10 @@ button{
     border-color: rgb(255, 191, 54) !important;
 }
 
+.btn-lista{
+    width: 120px;
+    height: 60px;
+}
 
 #divAplicacao{
     display: none;
