@@ -158,20 +158,22 @@
                     <button type="button" class="btn btn-lista " id="btnSair">Sair</button>
                 </div>
 
-                <!--LISTAGEM DOS GROWDEVERS-->
-                <div class="col-sm-10 " id="listaGrowdevers">
-                    <h3>Lista de Growdevers</h3>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Opções</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Telefone</th>
-                                <th scope="col">Programa</th>
-                            </tr>
-                        </thead>
-                        <tbody id="divListaG">
-                            <!--
+                <!--DIV GROWDEVERS-->
+                <div id="divGrowdevers" class="col-sm-10 ">
+                    <!--LISTAGEM DOS GROWDEVERS-->
+                    <div class="col-sm-10 " id="listaGrowdevers">
+                        <h3>Lista de Growdevers</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Opções</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Programa</th>
+                                </tr>
+                            </thead>
+                            <tbody id="divListaG">
+                                <!--
                             <tr>
                                 <th scope="row">userName</th>
                                 <td>Nome</td>
@@ -192,25 +194,158 @@
                             </tr>
                             -->
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
 
+                    </div>
+
+                    <!--ADICIONAR UM GROWDEVER-->
+                    <div class="col-sm-10 " id="addGrowdever">
+
+                        <div class="">
+
+                            <div class="col-md-12 col-lg-12 ">
+                                <h4 class="mb-3 text-center">Cadastro de Growdever</h4>
+                                <form class="needs-validation" novalidate>
+                                    <div class="row g-3">
+
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-sm-6">
+                                            <label for="Email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="growdeverEmail"
+                                                placeholder="email@email.com.br" value="" required>
+                                            <div class="invalid-feedback">
+                                                Informe um Email.
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 "></div>
+
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-6">
+                                            <label for="Telefone" class="form-label">Telefone</label>
+                                            <div class="input-group">
+
+                                                <input type="text" class="form-control" id="growdeverPhone"
+                                                    placeholder="Telefone" required>
+                                                <div class="invalid-feedback">
+                                                    Informe um telefone.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 "></div>
+
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-6">
+                                            <label for="Programa" class="form-label">Programa</label>
+                                            <input type="text" class="form-control" id="growdeverProgram"
+                                                placeholder="_ª Edição">
+                                            <div class="invalid-feedback">
+                                                Informe em que programa o Growdever está matriculado.
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <hr class="my-4">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <button class="col-md-6 btn btn-primary btn-lg" type="button"
+                                            id="growdeverBtn">Confirmar
+                                            cadastro</button>
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--EDITAR UM GROWDEVER-->
+                    <div class="col-sm-10 " id="editGrowdever">
+
+                        <div class="">
+
+                            <div class="col-md-12 col-lg-12 ">
+                                <h4 class="mb-3 text-center">Edição de Growdever</h4>
+                                <form class="needs-validation" novalidate>
+                                    <div class="row g-3">
+
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-sm-6">
+                                            <label for="Email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="editEmail"
+                                                placeholder="email@email.com.br" value="" required>
+                                            <div class="invalid-feedback">
+                                                Informe um Email.
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 "></div>
+
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-6">
+                                            <label for="Telefone" class="form-label">Telefone</label>
+                                            <div class="input-group">
+
+                                                <input type="text" class="form-control" id="editPhone"
+                                                    placeholder="Telefone" required>
+                                                <div class="invalid-feedback">
+                                                    Informe um telefone.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 "></div>
+
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-6">
+                                            <label for="Programa" class="form-label">Programa</label>
+                                            <input type="text" class="form-control" id="editProgram"
+                                                placeholder="_ª Edição">
+                                            <div class="invalid-feedback">
+                                                Informe em que programa o Growdever está matriculado.
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <hr class="my-4">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <button class="col-md-6 btn btn-primary btn-lg" type="button"
+                                            id="confirmaEditBtn">Confirmar
+                                            edição</button>
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
-                <!--LISTAGEM DOS USERS-->
-                <div class="col-sm-10 " id="listaUsers">
-                    <h3>Lista de Users</h3>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Opções</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">username</th>
-                                <th scope="col">Tipo</th>
-                            </tr>
-                        </thead>
-                        <tbody id="divListaU">
-                            <!--
+                <!--DIV USERS-->
+                <div id="divUsers" class="col-sm-10 ">
+                    <!--LISTAGEM DOS USERS-->
+                    <div class="col-sm-10 " id="listaUsers">
+                        <h3>Lista de Users</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Opções</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">username</th>
+                                    <th scope="col">Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="divListaU">
+                                <!--
                                 <tr>
                                     <th scope="row">userName</th>
                                     <td>Nome</td>
@@ -231,142 +366,78 @@
                                 </tr>
                                 -->
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
 
-                </div>
-
-                <!--ADICIONAR UM GROWDEVER-->
-                <div class="col-sm-10 " id="addGrowdever">
-
-                    <div class="">
-
-                        <div class="col-md-12 col-lg-12 ">
-                            <h4 class="mb-3 text-center">Cadastro de Growdever</h4>
-                            <form class="needs-validation" novalidate>
-                                <div class="row g-3">
-
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <div class="col-sm-6">
-                                        <label for="Email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="growdeverEmail"
-                                            placeholder="email@email.com.br" value="" required>
-                                        <div class="invalid-feedback">
-                                            Informe um Email.
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 "></div>
-
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <div class="col-6">
-                                        <label for="Telefone" class="form-label">Telefone</label>
-                                        <div class="input-group">
-
-                                            <input type="text" class="form-control" id="growdeverPhone"
-                                                placeholder="Telefone" required>
-                                            <div class="invalid-feedback">
-                                                Informe um telefone.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 "></div>
-
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <div class="col-6">
-                                        <label for="Programa" class="form-label">Programa</label>
-                                        <input type="text" class="form-control" id="growdeverProgram"
-                                            placeholder="_ª Edição">
-                                        <div class="invalid-feedback">
-                                            Informe em que programa o Growdever está matriculado.
-                                        </div>
-                                    </div>
-
-
-
-
-                                </div>
-
-                                <hr class="my-4">
-                                <div class="row">
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <button class="col-md-6 btn btn-primary btn-lg" type="button"
-                                        id="growdeverBtn">Confirmar
-                                        cadastro</button>
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
 
-                </div>
+                    <!--EDITAR UM USER-->
+                    <div class="col-sm-10 " id="editUsers">
 
-                <!--EDITAR UM GROWDEVER-->
-                <div class="col-sm-10 " id="editGrowdever">
+                        <div class="">
 
-                    <div class="">
+                            <div class="col-md-12 col-lg-12 ">
+                                <h4 class="mb-3 text-center">Edição de User</h4>
+                                <form class="needs-validation" novalidate>
+                                    <div class="row g-3">
 
-                        <div class="col-md-12 col-lg-12 ">
-                            <h4 class="mb-3 text-center">Edição de Growdever</h4>
-                            <form class="needs-validation" novalidate>
-                                <div class="row g-3">
-
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <div class="col-sm-6">
-                                        <label for="Email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="editEmail"
-                                            placeholder="email@email.com.br" value="" required>
-                                        <div class="invalid-feedback">
-                                            Informe um Email.
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 "></div>
-
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <div class="col-6">
-                                        <label for="Telefone" class="form-label">Telefone</label>
-                                        <div class="input-group">
-
-                                            <input type="text" class="form-control" id="editPhone"
-                                                placeholder="Telefone" required>
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-sm-6">
+                                            <label for="Nome" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="editName" placeholder="Nome"
+                                                value="" required>
                                             <div class="invalid-feedback">
-                                                Informe um telefone.
+                                                Informe um Nome.
+
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-md-3 col-lg-3 "></div>
 
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <div class="col-6">
-                                        <label for="Programa" class="form-label">Programa</label>
-                                        <input type="text" class="form-control" id="editProgram"
-                                            placeholder="_ª Edição">
-                                        <div class="invalid-feedback">
-                                            Informe em que programa o Growdever está matriculado.
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-6">
+                                            <label for="Telefone" class="form-label">Tipo de User</label>
+                                            <div class="input-group">
+
+                                                <input type="text" class="form-control" id="editType"
+                                                    placeholder="Tipo de User" required>
+                                                <div class="invalid-feedback">
+                                                    Informe um tipo.
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div class="col-md-3 col-lg-3 "></div>
+
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <div class="col-6">
+                                            <label for="username" class="form-label">Username</label>
+                                            <input type="text" class="form-control" id="editUserName"
+                                                placeholder="_ª Edição">
+                                            <div class="invalid-feedback">
+                                                Informe um username.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 "></div>
+
+
+
+
+
                                     </div>
 
-
-
-
-                                </div>
-
-                                <hr class="my-4">
-                                <div class="row">
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                    <button class="col-md-6 btn btn-primary btn-lg" type="button"
-                                        id="confirmaEditBtn">Confirmar
-                                        edição</button>
-                                    <div class="col-md-3 col-lg-3 "></div>
-                                </div>
-                            </form>
+                                    <hr class="my-4">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                        <button class="col-md-6 btn btn-primary btn-lg" type="button"
+                                            id="confirmaEditUBtn">Confirmar
+                                            edição</button>
+                                        <div class="col-md-3 col-lg-3 "></div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+
                     </div>
-
                 </div>
-
-
             </div>
 
 

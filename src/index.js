@@ -6,10 +6,14 @@ class App {
         document.getElementById("btnLogin").onclick = () => this.loginClick();
         document.getElementById("btnCadastrar").onclick = () => this.cadastrarUser();
         document.getElementById("btnCadastrarGrowdever").onclick = () => this.incluirGrowdever();
-        document.getElementById("LoginCadastro").onclick = () => this.page();
+        document.getElementById("LoginCadastro").onclick = () => {
+            document.getElementById("divLogin").style.display = "none";
+            document.getElementById("divCadastro").style.display = "block";
+        };
         document.getElementById("btnListarGrowdevers").onclick = () => {
             this.listaGrowdevers.style.display = "block";
             this.addGrowdever.style.display = "none";
+            this.listarGrowdevers(this.token);
         };
         document.getElementById("btnListarUsers").onclick = () => {
             this.listaUsers.style.display = "block";
@@ -28,6 +32,8 @@ class App {
 
 
         //DOM divs
+        this.divGrowdevers = document.getElementById("divGrowdevers");
+        this.divUsers = document.getElementById("divUsers");
         this.listaGrowdevers = document.getElementById("listaGrowdevers");
         this.listaUsers = document.getElementById("listaUsers");
         this.addGrowdever = document.getElementById("addGrowdever");
@@ -42,6 +48,7 @@ class App {
         this.divListaG = document.getElementById("divListaG");
         this.divListaU = document.getElementById("divListaU");
         this.editGrowdever = document.getElementById("editGrowdever");
+        this.editUsers = document.getElementById("editUsers");
         this.token = "";
         this.userId = "";
         this.listaDeGrowdevers = [];
@@ -82,10 +89,10 @@ class App {
 
     cadastrarUser() {
 
-        const name = document.getElementById("inputName").value;
-        const password = document.getElementById("inputPassword").value;
-        const type = document.getElementById("typeSelect").value;
-        const username = document.getElementById("username").value;
+        let name = document.getElementById("inputName").value;
+        let password = document.getElementById("inputPassword").value;
+        let type = document.getElementById("typeSelect").value;
+        let username = document.getElementById("username").value;
 
         console.log(name, password, type, username);
 
@@ -102,36 +109,22 @@ class App {
                 this.divAplicacao.style.display = "none";
                 this.divLogin.style.display = "block";
             })
-            .catch(e => console.log("n ok", e));
-    }
-
-    excluirUser(event) {
-
-        let uid = event.path[0].dataset.excluir;
-
-        apiGrowdev.deleteAutenticado(`/users/${uid}`, this.token)
-            .then(r => {
-                this.listarUsers(this.token);
-                alert("Growdever excluído com sucesso!");
-            })
-            .catch(e => {
-                alert(e.response.data.message);
-            })
-
+            .catch(e => alert(e.response.data.message));
     }
 
     listarUsers(token) {
         //manipula SPA
         this.divLoading.style.display = "block";
-        this.editGrowdever.style.display = "none";
+        this.editUsers.style.display = "none";
         this.divLogin.style.display = "none";
+        this.divGrowdevers.style.display = "none";
         this.divCadastro.style.display = "none";
         this.addGrowdever.style.display = "none";
 
 
         apiGrowdev.getAutenticado('/users', token)
             .then(r => {
-                console.log(r);
+                
                 let html = "";
                 r.data.users.forEach(element => {
                     this.listaDeUsers.push(element);
@@ -160,6 +153,7 @@ class App {
                 //manipula SPA
                 this.divLoading.style.display = "none";
                 this.divAplicacao.style.display = "block";
+                this.divUsers.style.display = "block";
                 this.listaUsers.style.display = "block";
 
                 document.querySelectorAll('.page-edit').forEach((el) => {
@@ -178,9 +172,9 @@ class App {
 
         let uid = event.path[0].dataset.excluir;
 
-        apiGrowdev.deleteAutenticado(`/growdevers/${uid}`, this.token)
+        apiGrowdev.deleteAutenticado(`/users/${uid}`, this.token)
             .then(r => {
-                this.listarGrowdevers(this.token);
+                this.listarUsers(this.token);
                 alert("User excluído com sucesso!");
             })
             .catch(e => {
@@ -194,37 +188,34 @@ class App {
         let uid = event.path[0].dataset.edit;
 
         this.divLoading.style.display = "none";
+        this.divGrowdevers.style.display = "none";
         this.listaUsers.style.display = "none";
         this.editUsers.style.display = "block";
+        this.divUsers.style.display = "block";
+        
 
-
-        this.listaDeGrowdevers.forEach(gd => {
-
+        this.listaDeUsers.forEach(gd => {
             if (gd.uid === uid) {
 
-                console.log("certo");
+                document.getElementById("editName").value = gd.name;
+                document.getElementById("editType").value = gd.type;
+                document.getElementById("editUserName").value = gd.username;
 
 
-                document.getElementById("editEmail").value = gd.email;
-                document.getElementById("editPhone").value = gd.phone;
-                document.getElementById("editProgram").value = gd.program;
-
-
-                document.getElementById("confirmaEditBtn").onclick = () => {
-                    let email = document.getElementById("editEmail").value;
-                    let phone = document.getElementById("editPhone").value;
-                    let program = document.getElementById("editProgram").value;
-
-                    apiGrowdev.putAutenticado(`/growdevers/${uid}`, {
-                        "email": email,
-                        "phone": phone,
-                        "program": program
+                document.getElementById("confirmaEditUBtn").onclick = () => {
+                    let name = document.getElementById("editName").value;
+                    let type = document.getElementById("editType").value;
+                    let username = document.getElementById("editUserName").value;
+                    console.log(uid);
+                    apiGrowdev.putAutenticado(`/users/${uid}`, {
+                        "name": name,
+                        "type": type,
+                        "username": username
                     }, this.token)
                         .then(r => {
-                            console.log("ok")
-                            this.listarGrowdevers(this.token);
-                            alert("Growdever editado com sucesso!");
-                            this.editGrowdever.style.display = "none"
+                            this.listarUsers(this.token);
+                            alert("User editado com sucesso!");
+                            this.editUsers.style.display = "none"
                         })
                         .catch(e => {
                             alert(e.response.data.message);
@@ -236,16 +227,13 @@ class App {
 
     }
 
-    page() {
-        document.getElementById("divLogin").style.display = "none";
-        document.getElementById("divCadastro").style.display = "block";
 
-    }
 
     listarGrowdevers(token) {
         //manipula SPA
         this.divLoading.style.display = "block";
         this.editGrowdever.style.display = "none";
+        this.divUsers.style.display = "none";
         this.divLogin.style.display = "none";
         this.divCadastro.style.display = "none";
         this.addGrowdever.style.display = "none";
@@ -281,6 +269,7 @@ class App {
                 //manipula SPA
                 this.divLoading.style.display = "none";
                 this.divAplicacao.style.display = "block";
+                this.divGrowdevers.style.display = "block";
                 this.listaGrowdevers.style.display = "block";
 
                 document.querySelectorAll('.page-edit').forEach((el) => {
@@ -305,6 +294,8 @@ class App {
 
         //manipula SPA
         this.listaGrowdevers.style.display = "none";
+        this.divUsers.style.display = "none";
+        this.divGrowdevers.style.display = "block";
         this.addGrowdever.style.display = "block";
 
         this.growdeverBtn.onclick = () => {
@@ -352,6 +343,8 @@ class App {
         let uid = event.path[0].dataset.edit;
 
         this.divLoading.style.display = "none";
+        this.divUsers.style.display = "none";
+        this.divGrowdevers.style.display = "block";
         this.listaGrowdevers.style.display = "none";
         this.editGrowdever.style.display = "block";
 
