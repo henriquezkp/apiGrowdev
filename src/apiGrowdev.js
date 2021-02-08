@@ -33,7 +33,6 @@ class apiGrowdev {
         return api.get(url);
     }
 
-
     //login, {username: "henrique", password: "12345"}
     post(url, dados) {
         const api = axios.create({
@@ -60,8 +59,7 @@ class apiGrowdev {
         return api.post(url, dados);
     }
 
-
-    deleteGrowdever(url, token) {
+    deleteAutenticado(url, token) {
         const api = axios.create({
             baseURL: this.baseURL,
             headers: {
@@ -74,7 +72,7 @@ class apiGrowdev {
         return api.delete(url);
     }
 
-    editGrowdever(url, dados, token) {
+    putAutenticado(url, dados, token) {
         const api = axios.create({
             baseURL: this.baseURL,
             headers: {
